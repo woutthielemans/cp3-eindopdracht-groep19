@@ -40,7 +40,8 @@ public class ConversionButton extends Sprite{
             trace(conversion["title"]);
 
             _conversionsButton = new Button();
-            _conversionsButton.setSize(50,50);
+            _conversionsButton.label = conversion["title"];
+            _conversionsButton.setSize(200,50);
             addChild(_conversionsButton);
             _conversionsButton.y = yPos;
             yPos += 50;
