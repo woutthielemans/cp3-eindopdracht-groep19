@@ -21,6 +21,8 @@ public class Main extends Sprite {
 
     public function Main() {
 
+        addEventListener(Event.ADDED_TO_STAGE, addedHandler);
+
         new MetalWorksMobileTheme();
 
         _appModel = AppModel.getInstance();
@@ -30,9 +32,6 @@ public class Main extends Sprite {
 
         _conversionButton = new ConversionButton();
         addChild(_conversionButton);
-
-        addEventListener(Event.ADDED_TO_STAGE, addedHandler);
-
 
     }
 
