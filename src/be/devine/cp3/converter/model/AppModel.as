@@ -1,11 +1,5 @@
-/**
- * Created with IntelliJ IDEA.
- * User: sorenselleslagh
- * Date: 06/12/13
- * Time: 17:34
- * To change this template use File | Settings | File Templates.
- */
 package be.devine.cp3.converter.model {
+import be.devine.cp3.converter.components.ConversionButton;
 import be.devine.cp3.converter.model.service.ConversionService;
 
 import flash.events.Event;
@@ -16,13 +10,25 @@ import flash.events.IEventDispatcher;
 public class AppModel extends EventDispatcher {
 
     public static const CONVERSIONS_CHANGED:String = "conversionsChanged";
+    public static const CURRENT_CONVERSION_CHANGED:String = "currentConversionChanged";
 
     private var _conversions:Array;
 
-    // AppModel wordt instance om aanmaken meerdere AppModels onmogelijk te maken
-    // hiervoor enkele lijnen code en Enforcer class als beveiliging
-
     private static var instance:AppModel;
+
+    private var currentConversionChanged:Boolean;
+    private var _currentConversion:ConversionButton;
+    public function get currentConversion():ConversionButton {
+        return _currentConversion;
+    }
+
+    public function set currentConversion(value:ConversionButton):void {
+        if (_currentConversion != value) {
+            currentConversionChanged = true;
+            _currentConversion = value;
+            dispatchEvent(new Event(CURRENT_CONVERSION_CHANGED));
+        }
+    }
 
     public static function getInstance():AppModel {
         if (instance == null) {

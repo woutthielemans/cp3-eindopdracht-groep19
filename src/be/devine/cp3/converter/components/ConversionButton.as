@@ -17,8 +17,6 @@ import starling.display.Sprite;
 
 public class ConversionButton extends Sprite{
 
-    trace('in ConversionButton class');
-
     private var _explicitWidth:Number = 0;
     private var _explicitHeight:Number = 0;
     private var yPos = 80;
@@ -33,14 +31,14 @@ public class ConversionButton extends Sprite{
         _appModel = AppModel.getInstance();
 
         _conversionsList = _appModel.conversions;
-        trace("[ConversionsButton] _appModel.conversions = " + _appModel.conversions);
 
         for each(var conversion:Object in _appModel.conversions){
 
             trace(conversion["title"]);
 
             _conversionsButton = new Button();
-            _conversionsButton.setSize(50,50);
+            _conversionsButton.label = conversion["title"];
+            _conversionsButton.setSize(200,50);
             addChild(_conversionsButton);
             _conversionsButton.y = yPos;
             yPos += 50;
