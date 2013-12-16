@@ -1,13 +1,15 @@
-package be.devine.cp3.converter.components {
+package be.devine.cp3.converter.view {
 import be.devine.cp3.converter.model.AppModel;
 
 import feathers.controls.Button;
 
 import feathers.controls.Label;
 import feathers.controls.List;
+import feathers.controls.ScreenNavigator;
 import feathers.data.ListCollection;
 
 import flash.events.Event;
+import flash.events.MouseEvent;
 
 import starling.events.Event;
 
@@ -26,6 +28,7 @@ public class ConversionButton extends Sprite{
     private var _conversionsButton:Button;
     private var _conversionsList:Array;
 
+
     public function ConversionButton() {
 
         _appModel = AppModel.getInstance();
@@ -42,8 +45,11 @@ public class ConversionButton extends Sprite{
             addChild(_conversionsButton);
             _conversionsButton.y = yPos;
             yPos += 50;
-
         }
+    }
+
+    private function triggeredHandler(event:Event):void {
+
     }
 
     public function setSize(w:Number, h:Number):void {

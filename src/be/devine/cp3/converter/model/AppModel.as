@@ -1,5 +1,5 @@
 package be.devine.cp3.converter.model {
-import be.devine.cp3.converter.components.ConversionButton;
+import be.devine.cp3.converter.view.ConversionButton;
 import be.devine.cp3.converter.model.service.ConversionService;
 
 import flash.events.Event;

@@ -1,10 +1,7 @@
 package be.devine.cp3.converter {
 
-import be.devine.cp3.converter.components.ConversionButton;
-import be.devine.cp3.converter.components.ConversionGroup;
 import be.devine.cp3.converter.model.AppModel;
-
-import feathers.themes.MetalWorksMobileTheme;
+import be.devine.cp3.converter.view.ConversionButton;
 
 import feathers.themes.MetalWorksMobileTheme;
 
@@ -17,7 +14,6 @@ public class Main extends Sprite {
 
     private var _appModel:AppModel;
     private var _conversionButton:ConversionButton;
-    private var _conversionGroup:ConversionGroup;
 
     public function Main() {
 
