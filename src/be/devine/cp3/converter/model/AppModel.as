@@ -9,10 +9,11 @@ import flash.events.IEventDispatcher;
 
 public class AppModel extends EventDispatcher {
 
-    public static const CONVERSIONS_CHANGED:String = "conversionsChanged";
+    public static const JSON_CHANGED:String = "jsonFileChanged";
     public static const CURRENT_CONVERSION_CHANGED:String = "currentConversionChanged";
+    public static const COMPLETED_LOADING_JSON:String = "completedLoadingJson";
 
-    private var _conversions:Array;
+    private var _am_obj:Object;
 
     private static var instance:AppModel;
 
@@ -41,7 +42,6 @@ public class AppModel extends EventDispatcher {
         if (e == null) {
             throw new Error("AppModel is a singleton, use getInstance() instead");
         }
-        _conversions = [];
     }
 
     public function load():void {
@@ -52,18 +52,18 @@ public class AppModel extends EventDispatcher {
 
     private function loadCompleteHandler(event:Event):void {
         var conversionService:ConversionService = event.target as ConversionService;
-        this._conversions = conversionService.conversions;
-        trace("[AppModel] _appModel.conversions = " + this.conversions);
+        this._am_obj = conversionService.cs_obj;
+        dispatchEvent(new Event(COMPLETED_LOADING_JSON));
     }
 
-    public function get conversions():Array {
-        return _conversions;
+    public function get am_obj():Object {
+        return _am_obj;
     }
 
-    public function set conversions(value:Array):void {
-        if (value != _conversions) {
-            _conversions = value;
-            dispatchEvent(new Event(CONVERSIONS_CHANGED));
+    public function set am_obj(value:Object):void {
+        if (value != _am_obj) {
+            _am_obj = value;
+            dispatchEvent(new Event(JSON_CHANGED));
         }
     }
 }

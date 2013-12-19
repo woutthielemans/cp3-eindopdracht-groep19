@@ -1,0 +1,24 @@
+{
+    "conversions": [
+        {
+            "title": "currency",
+            "formula": "currency formula"
+        },
+        {
+            "title": "length",
+            "formula": "length formula"
+        },
+        {
+            "title": "speed",
+            "formula": "speed formula"
+        },
+        {
+            "title": "temperature",
+            "formula": "temperature formula"
+        },
+        {
+            "title": "weight",
+            "formula": "weight formula"
+        }
+    ]
+}

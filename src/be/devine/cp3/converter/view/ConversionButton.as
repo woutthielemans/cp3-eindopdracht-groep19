@@ -19,19 +19,19 @@ import starling.display.Sprite;
 
 public class ConversionButton extends Sprite{
 
-    private var _explicitWidth:Number = 0;
+    /*private var _explicitWidth:Number = 0;
     private var _explicitHeight:Number = 0;
-    private var yPos = 80;
+    private var yPos = 80;*/
 
     private var _appModel:AppModel;
 
-    private var _conversionsButton:Button;
-    private var _conversionsList:Array;
+    /*private var _conversionsButton:Button;
+    private var _conversionsList:Array;*/
 
 
     public function ConversionButton() {
 
-        _appModel = AppModel.getInstance();
+        /*_appModel = AppModel.getInstance();
 
         _conversionsList = _appModel.conversions;
 
@@ -45,16 +45,12 @@ public class ConversionButton extends Sprite{
             addChild(_conversionsButton);
             _conversionsButton.y = yPos;
             yPos += 50;
-        }
+        }*/
     }
 
-    private function triggeredHandler(event:Event):void {
-
-    }
-
-    public function setSize(w:Number, h:Number):void {
+    /*public function setSize(w:Number, h:Number):void {
         _explicitWidth = w;
         _explicitHeight = h;
-    }
+    }*/
 }
 }

@@ -1,60 +1,33 @@
 package be.devine.cp3.converter.model.service {
 
+import flash.display.Loader;
 import flash.events.Event;
 
 import flash.events.EventDispatcher;
 import flash.filesystem.File;
 import flash.filesystem.FileMode;
 import flash.filesystem.FileStream;
+import flash.net.URLLoader;
+import flash.net.URLRequest;
 
 public class ConversionService extends EventDispatcher {
 
-    public var conversions:Array;
+    public var loader:URLLoader;
+    public var cs_obj:Object;
 
     public function ConversionService() {
     }
 
     public function load():void {
 
-        trace('parsing JSON file...');
-        var conversionsFile:File = File.applicationStorageDirectory.resolvePath("conversions.json");
-        if(!conversionsFile.exists) {
-            var writeStream:FileStream = new FileStream();
-            writeStream.open(conversionsFile, FileMode.WRITE);
-            writeStream.writeUTFBytes(JSON.stringify([
-                {
-                    title: "Money",
-                    formula: "money formula"
-                },
-                {
-                    title: "Weight",
-                    formula: "weight formula"
-                },
-                {
-                    title: "Speed",
-                    formula: "speed formula"
-                },
-                {
-                    title: "Length",
-                    formula: "length formula"
-                },
-                {
-                    title: "Weather",
-                    formula: "weather formula"
-                }
-            ]));
-            writeStream.close();
-        }
-        var readStream:FileStream = new FileStream();
-        readStream.open(conversionsFile, FileMode.READ);
-        var str:String = readStream.readUTFBytes(readStream.bytesAvailable);
-        var parsedJSON:Array = JSON.parse(str) as Array;
-        readStream.close();
-        var conversions:Array = [];
-        for each(var conversion:Object in parsedJSON) {
-            conversions.push(conversion);
-        }
-        this.conversions = conversions;
+        loader = new URLLoader(new URLRequest("assets/conversions.json"));
+        loader.addEventListener(flash.events.Event.COMPLETE, loaderCompleteHandler);
+
+    }
+
+    private function loaderCompleteHandler(event:Event):void {
+
+        cs_obj = JSON.parse(loader.data);
         dispatchEvent(new Event(Event.COMPLETE));
 
     }

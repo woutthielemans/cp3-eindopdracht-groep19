@@ -10,7 +10,6 @@ import feathers.controls.Screen;
 
 public class Conversion extends Screen {
     public function Conversion() {
-        super();
     }
 }
 }
