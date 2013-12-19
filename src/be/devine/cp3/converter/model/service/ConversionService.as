@@ -27,17 +27,17 @@ public class ConversionService extends EventDispatcher {
 
     public function calculate():void {
 
-        trace('[ConversionService] Calculate conversion.');
-
         _currentConversion = _appModel.currentConversion.title;
-
-        trace('[ConversionService] current conversion is: ' + _currentConversion);
 
         switch(_currentConversion)
             {
-            case "currency":
-                trace('[ConversionService] currency');
-                _appModel.value2 = _appModel.value1 * 2;
+                case "currency":
+                        if(_appModel.value2 == ""){
+                           _appModel.value2 = _appModel.value1*1.37;
+                        }
+                        if(_appModel.value1 == ""){
+                            _appModel.value1 = _appModel.value2*.73;
+                        }
                 break;
                 case "length":
                 trace('[ConversionService] length');

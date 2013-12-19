@@ -65,7 +65,6 @@ public class AppModel extends EventDispatcher {
     }
 
     public function calculate():void{
-        trace('[Appmodel] Calculate conversion.');
         conversionService = new ConversionService();
         conversionService.calculate();
         dispatchEvent(new Event(VALUES_CHANGED));

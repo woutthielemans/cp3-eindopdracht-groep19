@@ -59,6 +59,8 @@ public class Main extends Sprite {
     }
 
     private function selected(e:Event, sc:Object):void{
+        _appModel.value1 = 0;
+        _appModel.value2 = 0;
         selectedItem = sc;
         _appModel.currentConversion = selectedItem;
         nav.showScreen(CONVERSION_SCREEN);
