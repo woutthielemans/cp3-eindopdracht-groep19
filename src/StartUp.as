@@ -13,8 +13,6 @@ import starling.events.Event;
 
 public class StartUp extends Sprite {
 
-    trace('in StartUp class');
-
     private var _starling:Starling;
 
     public function StartUp() {

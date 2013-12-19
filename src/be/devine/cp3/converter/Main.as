@@ -15,8 +15,6 @@ import starling.events.Event;
 
 public class Main extends Sprite {
 
-    trace('in Main class');
-
     private var _appModel:AppModel;
     private var _conversionButton:ConversionButton;
 
@@ -25,6 +23,7 @@ public class Main extends Sprite {
     private static const HISTORY_SCREEN:String = "historyScreen";
 
     private var nav:ScreenNavigator;
+    public static var selectedItem:Object;
 
     public function Main() {
 
@@ -48,14 +47,15 @@ public class Main extends Sprite {
         var homeScreen:ScreenNavigatorItem = new ScreenNavigatorItem(Home, {conversionSelected: selected}, null);
         nav.addScreen(HOME_SCREEN, homeScreen);
 
-        var conversionScreen:ScreenNavigatorItem = new ScreenNavigatorItem(Conversion, {backHome: HOME_SCREEN}, null);
+        var conversionScreen:ScreenNavigatorItem = new ScreenNavigatorItem(Conversion, {complete: HOME_SCREEN}, null);
         nav.addScreen(CONVERSION_SCREEN, conversionScreen);
 
         nav.showScreen(HOME_SCREEN);
     }
 
     private function selected(e:Event, sc:Object):void{
-
+        selectedItem = sc;
+        nav.showScreen(CONVERSION_SCREEN);
     }
 
     private function resizeHandler(event:Event):void {
@@ -63,7 +63,6 @@ public class Main extends Sprite {
     }
 
     private function layout():void {
-        trace("[Starling]", stage.stageWidth, stage.stageHeight);
         /*_conversionButton.x = 10;
         _conversionButton.y = 10;
         _conversionButton.setSize(stage.stageWidth - 20, 50);*/

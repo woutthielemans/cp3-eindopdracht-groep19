@@ -48,7 +48,7 @@ public class Home extends Screen {
     override protected function initialize():void{
 
         header = new feathers.controls.Header();
-        header.title = "Conversion app";
+        header.title = "Home";
         addChild(header);
 
         _appModel.load();
