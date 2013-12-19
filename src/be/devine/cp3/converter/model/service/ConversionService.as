@@ -32,28 +32,44 @@ public class ConversionService extends EventDispatcher {
         switch(_currentConversion)
             {
                 case "currency":
-                        if(_appModel.value2 == ""){
-                           _appModel.value2 = _appModel.value1*1.37;
-                        }
-                        if(_appModel.value1 == ""){
-                            _appModel.value1 = _appModel.value2*.73;
-                        }
+                    if(_appModel.value2 == ""){
+                        _appModel.value2 = Math.round((_appModel.value1*1.37)*100)/100;
+                    }
+                    if(_appModel.value1 == ""){
+                        _appModel.value1 = Math.round((_appModel.value2*.73)*100)/100;
+                    }
                 break;
                 case "length":
-                trace('[ConversionService] length');
-                _appModel.value2 = _appModel.value1 * 3;
+                    if(_appModel.value2 == ""){
+                        _appModel.value2 = Math.round((_appModel.value1*0.393701)*100)/100;
+                    }
+                    if(_appModel.value1 == ""){
+                        _appModel.value1 = Math.round((_appModel.value2*2.54)*100)/100;
+                    }
                 break;
                 case "speed":
-                trace('[ConversionService] speed');
-                _appModel.value2 = _appModel.value1 * 4;
+                    if(_appModel.value2 == ""){
+                        _appModel.value2 = Math.round((_appModel.value1*0.621371)*100)/100;
+                    }
+                    if(_appModel.value1 == ""){
+                        _appModel.value1 = Math.round((_appModel.value2*1.60934)*100)/100;
+                    }
                 break;
                 case "temperature":
-                trace('[ConversionService] temperature');
-                _appModel.value2 = _appModel.value1 * 5;
+                    if(_appModel.value2 == ""){
+                        _appModel.value2 = Math.round((_appModel.value1*33.800)*100)/100;
+                    }
+                    if(_appModel.value1 == ""){
+                        _appModel.value1 = Math.round((_appModel.value2*17.222)*100)/100;
+                    }
                 break;
                 case "weight":
-                trace('[ConversionService] weight');
-                _appModel.value2 = _appModel.value1 * 6;
+                    if(_appModel.value2 == ""){
+                        _appModel.value2 = Math.round((_appModel.value1*2.20462)*100)/100;
+                    }
+                    if(_appModel.value1 == ""){
+                        _appModel.value1 = Math.round((_appModel.value2*0.453592)*100)/100;
+                    }
                 break;
                 default:
                 _appModel.value1 = _appModel.value2;

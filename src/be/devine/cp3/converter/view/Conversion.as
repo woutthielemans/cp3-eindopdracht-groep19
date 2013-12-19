@@ -68,7 +68,7 @@ public class Conversion extends Screen {
         header.leftItems = new <DisplayObject>[ backButton ];
 
         input1 = new TextInput();
-        input1.textEditorProperties.restrict = "0-9";
+        input1.textEditorProperties.restrict = "0-9 .";
         input1.addEventListener(starling.events.Event.CHANGE, input1ChangeHandler);
         input1.addEventListener(FeathersEventType.FOCUS_IN, input1FocusHandler);
         this.addChild( input1 );
@@ -79,7 +79,7 @@ public class Conversion extends Screen {
         this.addChild(convertButton);
 
         input2 = new TextInput();
-        input2.textEditorProperties.restrict = "0-9";
+        input2.textEditorProperties.restrict = "0-9 .";
         input2.addEventListener(starling.events.Event.CHANGE, input2ChangeHandler);
         input2.addEventListener(FeathersEventType.FOCUS_IN, input2FocusHandler);
         this.addChild( input2 );
