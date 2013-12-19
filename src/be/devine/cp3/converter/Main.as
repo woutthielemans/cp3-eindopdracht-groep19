@@ -2,11 +2,11 @@ package be.devine.cp3.converter {
 
 import be.devine.cp3.converter.model.AppModel;
 import be.devine.cp3.converter.view.Conversion;
-import be.devine.cp3.converter.view.ConversionButton;
 import be.devine.cp3.converter.view.Home;
 
 import feathers.controls.ScreenNavigator;
 import feathers.controls.ScreenNavigatorItem;
+import feathers.motion.transitions.ScreenSlidingStackTransitionManager;
 
 import feathers.themes.MetalWorksMobileTheme;
 
@@ -16,7 +16,6 @@ import starling.events.Event;
 public class Main extends Sprite {
 
     private var _appModel:AppModel;
-    private var _conversionButton:ConversionButton;
 
     private static const HOME_SCREEN:String = "homeScreen";
     private static const CONVERSION_SCREEN:String = "conversionScreen";
@@ -44,6 +43,8 @@ public class Main extends Sprite {
         nav = new ScreenNavigator();
         addChild(nav);
 
+        var transition:ScreenSlidingStackTransitionManager = new ScreenSlidingStackTransitionManager(nav);
+
         var homeScreen:ScreenNavigatorItem = new ScreenNavigatorItem(Home, {conversionSelected: selected}, null);
         nav.addScreen(HOME_SCREEN, homeScreen);
 
@@ -56,6 +57,7 @@ public class Main extends Sprite {
     private function selected(e:Event, sc:Object):void{
         selectedItem = sc;
         nav.showScreen(CONVERSION_SCREEN);
+
     }
 
     private function resizeHandler(event:Event):void {
@@ -63,9 +65,6 @@ public class Main extends Sprite {
     }
 
     private function layout():void {
-        /*_conversionButton.x = 10;
-        _conversionButton.y = 10;
-        _conversionButton.setSize(stage.stageWidth - 20, 50);*/
     }
 }
 }

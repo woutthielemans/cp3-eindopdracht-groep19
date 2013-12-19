@@ -28,7 +28,6 @@ public class Home extends Screen {
     private var header:feathers.controls.Header;
     private var conversionList:List;
     private var _appModel:AppModel;
-    public var loader:URLLoader;
     public var obj:Object;
 
     public function Home() {
@@ -64,9 +63,6 @@ public class Home extends Screen {
         obj = _appModel.am_obj;
         conversionList.dataProvider = new ListCollection(obj.conversions);
         conversionList.itemRendererProperties.labelField = "title";
-        /*conversionList.itemRendererProperties.accessoryTextureFunction = function(item:Object):Texture {
-            return StandardIcons.listDrillDownAccessoryTexture;
-        }*/
         conversionList.addEventListener(starling.events.Event.CHANGE, conversionListChangeHandler);
 
     }

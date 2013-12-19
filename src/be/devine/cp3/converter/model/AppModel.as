@@ -1,5 +1,4 @@
 package be.devine.cp3.converter.model {
-import be.devine.cp3.converter.view.ConversionButton;
 import be.devine.cp3.converter.model.service.ConversionService;
 
 import flash.events.Event;
@@ -18,12 +17,12 @@ public class AppModel extends EventDispatcher {
     private static var instance:AppModel;
 
     private var currentConversionChanged:Boolean;
-    private var _currentConversion:ConversionButton;
-    public function get currentConversion():ConversionButton {
+    private var _currentConversion:Object;
+    public function get currentConversion():Object {
         return _currentConversion;
     }
 
-    public function set currentConversion(value:ConversionButton):void {
+    public function set currentConversion(value:Object):void {
         if (_currentConversion != value) {
             currentConversionChanged = true;
             _currentConversion = value;

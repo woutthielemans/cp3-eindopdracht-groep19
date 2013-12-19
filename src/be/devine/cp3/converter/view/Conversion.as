@@ -27,19 +27,23 @@ public class Conversion extends Screen {
     private var formula:Label;
     private var backButton:Button;
     public var currentConversion:Object;
+    private var _explicitWidth:Number = 0;
+    private var _explicitHeight:Number = 0;
 
     public function Conversion() {
     }
 
     override protected function draw():void{
         header.width = actualWidth;
+
+        formula.width = actualWidth;
         formula.y = header.height + 20;
         formula.x = 20.
     }
 
     override protected function initialize():void{
 
-        currentConversion = Main.selectedItem;
+currentConversion = Main.selectedItem;
 
         header = new Header();
         header.title = currentConversion.title;
