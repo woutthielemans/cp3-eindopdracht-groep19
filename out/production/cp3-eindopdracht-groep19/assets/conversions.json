@@ -2,7 +2,8 @@
     "conversions": [
         {
             "title": "currency",
-            "formula": "currency formula"
+            "euroToDollar": "1.37",
+            "dollarToEuro": "0.73"
         },
         {
             "title": "length",

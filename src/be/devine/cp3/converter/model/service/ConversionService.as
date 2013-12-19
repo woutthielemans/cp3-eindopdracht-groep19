@@ -33,42 +33,42 @@ public class ConversionService extends EventDispatcher {
             {
                 case "currency":
                     if(_appModel.value2 == ""){
-                        _appModel.value2 = Math.round((_appModel.value1*1.37)*100)/100;
+                        _appModel.value2 = Math.round((_appModel.value1*_appModel.currentConversion.euroToDollar)*100)/100;
                     }
                     if(_appModel.value1 == ""){
-                        _appModel.value1 = Math.round((_appModel.value2*.73)*100)/100;
+                        _appModel.value1 = Math.round((_appModel.value2*_appModel.currentConversion.dollarToEuro)*100)/100;
                     }
                 break;
                 case "length":
                     if(_appModel.value2 == ""){
-                        _appModel.value2 = Math.round((_appModel.value1*0.393701)*100)/100;
+                        _appModel.value2 = Math.round((_appModel.value1*_appModel.currentConversion.cmToInch)*100)/100;
                     }
                     if(_appModel.value1 == ""){
-                        _appModel.value1 = Math.round((_appModel.value2*2.54)*100)/100;
+                        _appModel.value1 = Math.round((_appModel.value2*_appModel.currentConversion.inchToCm)*100)/100;
                     }
                 break;
                 case "speed":
                     if(_appModel.value2 == ""){
-                        _appModel.value2 = Math.round((_appModel.value1*0.621371)*100)/100;
+                        _appModel.value2 = Math.round((_appModel.value1*_appModel.currentConversion.kphToMph)*100)/100;
                     }
                     if(_appModel.value1 == ""){
-                        _appModel.value1 = Math.round((_appModel.value2*1.60934)*100)/100;
+                        _appModel.value1 = Math.round((_appModel.value2*_appModel.currentConversion.mphToKph)*100)/100;
                     }
                 break;
                 case "temperature":
                     if(_appModel.value2 == ""){
-                        _appModel.value2 = Math.round((_appModel.value1*33.800)*100)/100;
+                        _appModel.value2 = Math.round((_appModel.value1*_appModel.currentConversion.celsiusToFahrenheit)*100)/100;
                     }
                     if(_appModel.value1 == ""){
-                        _appModel.value1 = Math.round((_appModel.value2*17.222)*100)/100;
+                        _appModel.value1 = Math.round((_appModel.value2*_appModel.currentConversion.fahrenheitToCentimeter)*100)/100;
                     }
                 break;
                 case "weight":
                     if(_appModel.value2 == ""){
-                        _appModel.value2 = Math.round((_appModel.value1*2.20462)*100)/100;
+                        _appModel.value2 = Math.round((_appModel.value1*_appModel.currentConversion.kgToLbs)*100)/100;
                     }
                     if(_appModel.value1 == ""){
-                        _appModel.value1 = Math.round((_appModel.value2*0.453592)*100)/100;
+                        _appModel.value1 = Math.round((_appModel.value2*_appModel.currentConversion.lbsToKg)*100)/100;
                     }
                 break;
                 default:
