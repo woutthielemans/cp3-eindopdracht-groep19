@@ -2,6 +2,7 @@ package be.devine.cp3.converter {
 
 import be.devine.cp3.converter.model.AppModel;
 import be.devine.cp3.converter.view.Conversion;
+import be.devine.cp3.converter.view.History;
 import be.devine.cp3.converter.view.Home;
 
 import feathers.controls.ScreenNavigator;
@@ -45,11 +46,14 @@ public class Main extends Sprite {
 
         var transition:ScreenSlidingStackTransitionManager = new ScreenSlidingStackTransitionManager(nav);
 
-        var homeScreen:ScreenNavigatorItem = new ScreenNavigatorItem(Home, {conversionSelected: selected}, null);
+        var homeScreen:ScreenNavigatorItem = new ScreenNavigatorItem(Home, {conversionSelected: selected, history: HISTORY_SCREEN}, null);
         nav.addScreen(HOME_SCREEN, homeScreen);
 
         var conversionScreen:ScreenNavigatorItem = new ScreenNavigatorItem(Conversion, {complete: HOME_SCREEN}, null);
         nav.addScreen(CONVERSION_SCREEN, conversionScreen);
+
+        var historyScreen:ScreenNavigatorItem = new ScreenNavigatorItem(History, {complete: HOME_SCREEN}, null);
+        nav.addScreen(HISTORY_SCREEN, historyScreen);
 
         nav.showScreen(HOME_SCREEN);
     }
@@ -65,6 +69,7 @@ public class Main extends Sprite {
     }
 
     private function layout():void {
+
     }
 }
 }

@@ -1,13 +1,8 @@
-/**
- * Created with IntelliJ IDEA.
- * User: woutthielemans
- * Date: 19/12/13
- * Time: 12:10
- * To change this template use File | Settings | File Templates.
- */
 package be.devine.cp3.converter.view {
 import be.devine.cp3.converter.components.Header;
 import be.devine.cp3.converter.model.AppModel;
+
+import feathers.controls.Button;
 
 import feathers.controls.Header;
 import feathers.controls.List;
@@ -18,6 +13,9 @@ import feathers.skins.StandardIcons;
 import flash.events.Event;
 import flash.net.URLLoader;
 import flash.net.URLRequest;
+
+import starling.display.Button;
+import starling.display.DisplayObject;
 
 import starling.events.Event;
 
@@ -50,6 +48,11 @@ public class Home extends Screen {
         header.title = "Home";
         addChild(header);
 
+        var historyButton:feathers.controls.Button = new feathers.controls.Button();
+        historyButton.label = "History";
+        historyButton.addEventListener(starling.events.Event.TRIGGERED, historyButtonTriggeredHandler);
+        header.rightItems = new <DisplayObject>[ historyButton ];
+
         _appModel.load();
         _appModel.addEventListener(AppModel.COMPLETED_LOADING_JSON, loaderCompleteHandler);
 
@@ -70,6 +73,12 @@ public class Home extends Screen {
     private function conversionListChangeHandler(event:starling.events.Event):void {
 
         dispatchEventWith("conversionSelected", false, conversionList.selectedItem);
+
+    }
+
+    private function historyButtonTriggeredHandler(e:starling.events.Event):void{
+
+        dispatchEventWith("history");
 
     }
 }
