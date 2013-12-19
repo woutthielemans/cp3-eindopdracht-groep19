@@ -60,6 +60,7 @@ public class Main extends Sprite {
 
     private function selected(e:Event, sc:Object):void{
         selectedItem = sc;
+        _appModel.currentConversion = selectedItem;
         nav.showScreen(CONVERSION_SCREEN);
 
     }
