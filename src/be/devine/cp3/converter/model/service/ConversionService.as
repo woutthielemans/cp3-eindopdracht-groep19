@@ -38,6 +38,7 @@ public class ConversionService extends EventDispatcher {
                     if(_appModel.value1 == ""){
                         _appModel.value1 = Math.round((_appModel.value2*_appModel.currentConversion.dollarToEuro)*100)/100;
                     }
+                    push();
                 break;
                 case "length":
                     if(_appModel.value2 == ""){
@@ -46,6 +47,7 @@ public class ConversionService extends EventDispatcher {
                     if(_appModel.value1 == ""){
                         _appModel.value1 = Math.round((_appModel.value2*_appModel.currentConversion.inchToCm)*100)/100;
                     }
+                    push();
                 break;
                 case "speed":
                     if(_appModel.value2 == ""){
@@ -54,6 +56,7 @@ public class ConversionService extends EventDispatcher {
                     if(_appModel.value1 == ""){
                         _appModel.value1 = Math.round((_appModel.value2*_appModel.currentConversion.mphToKph)*100)/100;
                     }
+                    push();
                 break;
                 case "temperature":
                     if(_appModel.value2 == ""){
@@ -62,6 +65,7 @@ public class ConversionService extends EventDispatcher {
                     if(_appModel.value1 == ""){
                         _appModel.value1 = Math.round((_appModel.value2*_appModel.currentConversion.fahrenheitToCentimeter)*100)/100;
                     }
+                    push();
                 break;
                 case "weight":
                     if(_appModel.value2 == ""){
@@ -70,10 +74,15 @@ public class ConversionService extends EventDispatcher {
                     if(_appModel.value1 == ""){
                         _appModel.value1 = Math.round((_appModel.value2*_appModel.currentConversion.lbsToKg)*100)/100;
                     }
+                    push();
                 break;
                 default:
                 _appModel.value1 = _appModel.value2;
             }
+
+    }
+
+    public function push():void{
 
     }
 }

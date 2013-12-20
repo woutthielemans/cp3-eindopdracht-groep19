@@ -51,7 +51,12 @@ public class Home extends Screen {
         var historyButton:feathers.controls.Button = new feathers.controls.Button();
         historyButton.label = "History";
         historyButton.addEventListener(starling.events.Event.TRIGGERED, historyButtonTriggeredHandler);
-        header.rightItems = new <DisplayObject>[ historyButton ];
+        header.leftItems = new <DisplayObject>[ historyButton ];
+
+        var addConversionButton:feathers.controls.Button = new feathers.controls.Button();
+        addConversionButton.label = "+";
+        addConversionButton.addEventListener(starling.events.Event.TRIGGERED, addConversionButtonTriggeredHandler);
+        header.rightItems = new <DisplayObject>[ addConversionButton ];
 
         _appModel.load();
         _appModel.addEventListener(AppModel.COMPLETED_LOADING_JSON, loaderCompleteHandler);
@@ -79,6 +84,12 @@ public class Home extends Screen {
     private function historyButtonTriggeredHandler(e:starling.events.Event):void{
 
         dispatchEventWith("history");
+
+    }
+
+    private function addConversionButtonTriggeredHandler(e:starling.events.Event):void{
+
+        dispatchEventWith("addConversion");
 
     }
 }

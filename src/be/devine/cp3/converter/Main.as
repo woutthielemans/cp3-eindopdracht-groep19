@@ -1,6 +1,7 @@
 package be.devine.cp3.converter {
 
 import be.devine.cp3.converter.model.AppModel;
+import be.devine.cp3.converter.view.AddConversion;
 import be.devine.cp3.converter.view.Conversion;
 import be.devine.cp3.converter.view.History;
 import be.devine.cp3.converter.view.Home;
@@ -21,6 +22,7 @@ public class Main extends Sprite {
     private static const HOME_SCREEN:String = "homeScreen";
     private static const CONVERSION_SCREEN:String = "conversionScreen";
     private static const HISTORY_SCREEN:String = "historyScreen";
+    private static const ADD_CONVERSION_SCREEN:String = "addConversionScreen";
 
     private var nav:ScreenNavigator;
     public static var selectedItem:Object;
@@ -46,7 +48,7 @@ public class Main extends Sprite {
 
         var transition:ScreenSlidingStackTransitionManager = new ScreenSlidingStackTransitionManager(nav);
 
-        var homeScreen:ScreenNavigatorItem = new ScreenNavigatorItem(Home, {conversionSelected: selected, history: HISTORY_SCREEN}, null);
+        var homeScreen:ScreenNavigatorItem = new ScreenNavigatorItem(Home, {conversionSelected: selected, history: HISTORY_SCREEN, addConversion: ADD_CONVERSION_SCREEN}, null);
         nav.addScreen(HOME_SCREEN, homeScreen);
 
         var conversionScreen:ScreenNavigatorItem = new ScreenNavigatorItem(Conversion, {complete: HOME_SCREEN}, null);
@@ -54,6 +56,9 @@ public class Main extends Sprite {
 
         var historyScreen:ScreenNavigatorItem = new ScreenNavigatorItem(History, {complete: HOME_SCREEN}, null);
         nav.addScreen(HISTORY_SCREEN, historyScreen);
+
+        var addConversionScreen:ScreenNavigatorItem = new ScreenNavigatorItem(AddConversion, {complete: HOME_SCREEN}, null);
+        nav.addScreen(ADD_CONVERSION_SCREEN, addConversionScreen);
 
         nav.showScreen(HOME_SCREEN);
     }

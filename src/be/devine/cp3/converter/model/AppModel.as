@@ -1,4 +1,5 @@
 package be.devine.cp3.converter.model {
+import be.devine.cp3.converter.model.service.AddConversionService;
 import be.devine.cp3.converter.model.service.ConversionService;
 import be.devine.cp3.converter.model.service.LoaderService;
 
@@ -24,6 +25,7 @@ public class AppModel extends EventDispatcher {
 
     private var loaderService:LoaderService;
     private var conversionService:ConversionService;
+    private var addConversionService:AddConversionService;
 
     private var currentConversionChanged:Boolean;
     private var _currentConversion:Object;
@@ -68,6 +70,12 @@ public class AppModel extends EventDispatcher {
         conversionService = new ConversionService();
         conversionService.calculate();
         dispatchEvent(new Event(VALUES_CHANGED));
+    }
+
+    public function push():void{
+        addConversionService = new AddConversionService();
+        addConversionService.push();
+        dispatchEvent(new Event(JSON_CHANGED));
     }
 
     public function get am_obj():Object {
