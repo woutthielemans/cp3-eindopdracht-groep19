@@ -5,10 +5,13 @@ import be.devine.cp3.converter.model.AppModel;
 import feathers.controls.Button;
 
 import feathers.controls.Header;
+import feathers.controls.LayoutGroup;
 import feathers.controls.List;
 import feathers.controls.Screen;
 import feathers.data.ListCollection;
 import feathers.skins.StandardIcons;
+
+import flash.display.BitmapData;
 
 import flash.events.Event;
 import flash.net.URLLoader;
@@ -20,9 +23,17 @@ import starling.display.DisplayObject;
 import starling.events.Event;
 
 import starling.textures.Texture;
+import starling.textures.TextureAtlas;
 
 public class Home extends Screen {
 
+    [Embed(source="/../assets/custom/spritesheet.png")]
+    protected static const ATLAS_IMAGE:Class;
+
+    [Embed(source="/../assets/custom/spritesheet.xml", mimeType="application/octet-stream")]
+    protected static const ATLAS_XML:Class;
+
+    private var _atlas:TextureAtlas;
     private var header:feathers.controls.Header;
     private var conversionList:List;
     private var _appModel:AppModel;
@@ -31,6 +42,9 @@ public class Home extends Screen {
     public function Home() {
 
         _appModel = AppModel.getInstance();
+
+        const atlasBitmapData:BitmapData = (new ATLAS_IMAGE()).bitmapData;
+        _atlas = new TextureAtlas(Texture.fromBitmapData(atlasBitmapData, false), XML(new ATLAS_XML()));
 
     }
 

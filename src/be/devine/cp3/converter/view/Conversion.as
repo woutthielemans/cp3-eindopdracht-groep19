@@ -6,6 +6,7 @@ import feathers.controls.Button;
 import feathers.controls.Header;
 
 import feathers.controls.Label;
+import feathers.controls.LayoutGroup;
 
 import feathers.controls.Screen;
 import feathers.controls.TextInput;
@@ -17,8 +18,17 @@ import flash.events.Event;
 import starling.display.DisplayObject;
 
 import starling.events.Event;
+import starling.textures.TextureAtlas;
 
 public class Conversion extends Screen {
+
+    [Embed(source="/../assets/custom/spritesheet.png")]
+    protected static const ATLAS_IMAGE:Class;
+
+    [Embed(source="/../assets/custom/spritesheet.xml", mimeType="application/octet-stream")]
+    protected static const ATLAS_XML:Class;
+
+    private var _atlas:TextureAtlas;
 
     private var header:Header;
     private var input1:TextInput;

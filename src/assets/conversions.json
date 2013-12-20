@@ -11,8 +11,8 @@
             "title": "length",
             "cmToInch": "0.393701",
             "inchToCm": "2.54",
-            "label1": "inch",
-            "label2": "cm"
+            "label1": "cm",
+            "label2": "inch"
         },
         {
             "title": "speed",

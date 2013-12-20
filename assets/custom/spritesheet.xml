@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="spritesheet.png">
+	<!-- Created with Adobe Flash Professional version 13.1.0.226 -->
+	<!-- http://www.adobe.com/products/flash.html -->
+	<SubTexture name="50x50trans.png" x="0" y="0" width="591" height="591" pivotX="0" pivotY="0"/>
+	<SubTexture name="add_icon.png" x="591" y="0" width="175" height="162" pivotX="0" pivotY="0"/>
+	<SubTexture name="back_icon.png" x="766" y="0" width="49" height="21" pivotX="0" pivotY="0"/>
+	<SubTexture name="bg.png" x="0" y="591" width="384" height="682" pivotX="0" pivotY="0"/>
+	<SubTexture name="convert.png" x="384" y="591" width="40" height="46" pivotX="0" pivotY="0"/>
+	<SubTexture name="history_icon.png" x="424" y="591" width="28" height="36" pivotX="0" pivotY="0"/>
+	<SubTexture name="length_icon.png" x="452" y="591" width="143" height="82" pivotX="0" pivotY="0"/>
+	<SubTexture name="length_nav.png" x="595" y="591" width="50" height="39" pivotX="0" pivotY="0"/>
+	<SubTexture name="logo.png" x="645" y="591" width="143" height="47" pivotX="0" pivotY="0"/>
+	<SubTexture name="money_icon.png" x="788" y="591" width="143" height="85" pivotX="0" pivotY="0"/>
+	<SubTexture name="money_nav.png" x="931" y="591" width="42" height="37" pivotX="0" pivotY="0"/>
+	<SubTexture name="speed_icon.png" x="0" y="1273" width="143" height="84" pivotX="0" pivotY="0"/>
+	<SubTexture name="speed_nav.png" x="143" y="1273" width="41" height="36" pivotX="0" pivotY="0"/>
+	<SubTexture name="weather_icon.png" x="184" y="1273" width="143" height="84" pivotX="0" pivotY="0"/>
+	<SubTexture name="weather_nav.png" x="327" y="1273" width="59" height="39" pivotX="0" pivotY="0"/>
+	<SubTexture name="weight_icon.png" x="386" y="1273" width="143" height="84" pivotX="0" pivotY="0"/>
+	<SubTexture name="wieght_nav.png" x="529" y="1273" width="46" height="44" pivotX="0" pivotY="0"/>
+</TextureAtlas>
