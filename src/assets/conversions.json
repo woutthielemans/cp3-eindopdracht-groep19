@@ -3,27 +3,37 @@
         {
             "title": "currency",
             "euroToDollar": "1.37",
-            "dollarToEuro": "0.73"
+            "dollarToEuro": "0.73",
+            "label1": "€",
+            "label2": "$"
         },
         {
             "title": "length",
             "cmToInch": "0.393701",
-            "inchToCm": "2.54"
+            "inchToCm": "2.54",
+            "label1": "inch",
+            "label2": "cm"
         },
         {
             "title": "speed",
             "kphToMph": "0.621371",
-            "mphToKph": "1.60934"
+            "mphToKph": "1.60934",
+            "label1": "kph",
+            "label2": "mph"
         },
         {
             "title": "temperature",
             "celsiusToFahrenheit": "33.8",
-            "fahrenheitToCentimeter": "17.222"
+            "fahrenheitToCentimeter": "17.222",
+            "label1": "C°",
+            "label2": "F°"
         },
         {
             "title": "weight",
             "kgToLbs": "2.20462",
-            "lbsToKg": "0.453592"
+            "lbsToKg": "0.453592",
+            "label1": "lbs",
+            "label2": "kg"
         }
     ]
 

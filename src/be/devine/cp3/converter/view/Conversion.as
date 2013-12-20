@@ -22,6 +22,8 @@ public class Conversion extends Screen {
 
     private var header:Header;
     private var input1:TextInput;
+    private var label1:Label;
+    private var label2:Label;
     private var input2:TextInput;
     private var value1:Number;
     private var value2:Number;
@@ -38,17 +40,25 @@ public class Conversion extends Screen {
     override protected function draw():void{
         header.width = actualWidth;
 
-        input1.width = (actualWidth/3)*2;
-        input1.x = actualWidth/2 - input1.width/2;
+        input1.width = ((actualWidth/3)*2)-60;
+        input1.x = (actualWidth/2 - input1.width/2)-25;
         input1.y = header.height + 20;
+
+        label1.width = 50;
+        label1.x = input1.x + input1.width + 5;
+        label1.y = input1.y;
 
         convertButton.width = 100;
         convertButton.x = actualWidth/2 - convertButton.width/2;
         convertButton.y = input1.y + input1.height + 30;
 
-        input2.width = (actualWidth/3)*2;
-        input2.x = actualWidth/2 - input2.width/2;
+        input2.width = ((actualWidth/3)*2)-60;
+        input2.x = (actualWidth/2 - input2.width/2)-25;
         input2.y = convertButton.y + convertButton.height + 30;
+
+        label2.width = 50;
+        label2.x = input2.x + input2.width + 5;
+        label2.y = input2.y;
     }
 
     override protected function initialize():void{
@@ -73,6 +83,10 @@ public class Conversion extends Screen {
         input1.addEventListener(FeathersEventType.FOCUS_IN, input1FocusHandler);
         this.addChild( input1 );
 
+        label1 = new Label();
+        label1.text = _appModel.currentConversion.label1;
+        addChild(label1);
+
         convertButton = new Button();
         convertButton.label = "convert";
         convertButton.addEventListener( starling.events.Event.TRIGGERED, convertButtonTriggeredHandler );
@@ -83,6 +97,10 @@ public class Conversion extends Screen {
         input2.addEventListener(starling.events.Event.CHANGE, input2ChangeHandler);
         input2.addEventListener(FeathersEventType.FOCUS_IN, input2FocusHandler);
         this.addChild( input2 );
+
+        label2 = new Label();
+        label2.text = _appModel.currentConversion.label2;
+        addChild(label2);
 
     }
 
